@@ -1,0 +1,483 @@
+/* Reset general para evitar espacios fantasma */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* O la que prefieras */
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* --- Contenedor Principal (Header) --- */
+.main-header {
+    display: flex;
+    justify-content: space-between; /* Separa Logo - Menú - Iconos */
+    align-items: center;            /* Alineación vertical perfecta */
+    background-color: #ffffff;
+    /* Sin sombras ni bordes para que sea limpio */
+}
+
+/* CONTENEDOR GENERAL DE TODA LA PÁGINA */
+.container {
+    width: calc(100% - 120px); /* 60px margen izquierda y derecha */
+    max-width: 1400px;
+    margin: 0 auto; /* Centra todo */
+}
+
+/* --- Logo --- */
+.logo-container .logo {
+    height: 140px; /* Tamaño grande para el logo */
+    width: auto;
+    display: block;
+    margin-left: -20px; /* ajusta suave */
+}
+
+/* --- Menú de Navegación --- */
+
+.nav-menu {
+    margin-left: auto; /* lo manda hacia la derecha */
+    margin-right: 60px; /* espacio antes de los íconos */
+    margin-right: auto; 
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 40px; 
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    position: relative; /* Necesario para posicionar la línea respecto al texto */
+    padding-bottom: 8px; /* Espacio para que la línea no toque las letras */
+    transition: color 0.3s ease;
+}
+
+/* --- Creación de la línea dorada (Oculta al inicio) --- */
+.nav-menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;           /* Empezamos con ancho 0 para que no se vea */
+    height: 1.5px;      /* Grosor de la línea */
+    bottom: 0;
+    left: 50%;          /* La centramos */
+    background-color: #c5a059; /* Tu color dorado */
+    transition: all 0.3s ease; /* Animación suave */
+    transform: translateX(-50%); /* Centrado perfecto */
+}
+
+/* --- Efecto HOVER (Cuando pasas el mouse) --- */
+.nav-menu ul li a:hover {
+    color: #c5a059; /* El texto también cambia a dorado opcionalmente */
+}
+
+.nav-menu ul li a:hover::after {
+    width: 100%; /* La línea crece hasta cubrir todo el ancho del texto */
+}
+
+/* --- Aseguramos que los iconos mantengan su tamaño --- */
+.custom-icon {
+    width: 35px !important; /* Forzamos el tamaño para que no vuelvan a crecer */
+    height: auto;
+    display: block;
+}
+
+.cart-flipped {
+    transform: scaleX(-1);
+}
+
+/* --- Iconos (Usuario y Carrito) --- */
+.header-icons {
+    display: flex;          
+    flex-direction: row;    
+    align-items: center;    
+    gap: 20px;              
+    
+    /* 1. Usamos posición relativa para moverlo libremente */
+    position: relative; 
+    
+    /* Limpiamos márgenes que puedan estar estorbando */
+    margin: 0; 
+}
+
+/* Estilo para las imágenes de los iconos (se mantiene igual) */
+.custom-icon {
+    width: 35px;    
+    margin-left: 0px;        
+    height: auto;
+    display: block;
+}
+
+/* Voltear el carrito (se mantiene igual) */
+.cart-flipped {
+    transform: scaleX(-1);
+}
+
+
+/* Registro de fuentes locales */
+@font-face {
+    font-family: 'MontserratLocal';
+    src: url('../Fuentes/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PlayfairLocal';
+    src: url('../Fuentes/PlayfairDisplay-Italic.ttf') format('truetype');
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- CABECERA --- */
+.catalog-header {
+    display: flex;
+    align-items: center;
+    padding: 60px 20px;
+    gap: 40px;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.catalog-title {
+    font-family: 'PlayfairLocal', serif;
+    font-size: 3.5rem;
+    color: #c5a059;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.header-text p {
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+.header-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.oval-img {
+    width: 100%;
+    max-width: 450px;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 250px; /* Crea el efecto ovalado perfecto */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+
+/* --- BARRA DE FILTROS --- */
+.filter-bar {
+    display: flex;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 40px;
+}
+
+.filter-item {
+    padding: 15px 25px;
+    border-right: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+}
+
+.filter-item.active {
+    background-color: #c5a059;
+    color: white;
+}
+
+.filter-item:last-child {
+    border-right: none;
+}
+
+/* --- CUADRÍCULA DE PRODUCTOS --- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas como la imagen */
+    gap: 20px;
+    padding-bottom: 80px;
+}
+
+/* --- Tarjeta de Producto (Base) --- */
+.product-card {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid transparent; /* El borde es invisible al inicio */
+    transition: all 0.4s ease;    /* Transición suave para todo */
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Efecto HOVER (Cuando pasas el mouse) --- */
+.product-link:hover .product-card {
+    border: 1px solid #fffefe;    /* Aparece el recuadro gris */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Sombra muy sutil */
+}
+
+/* --- Contenedor de Precio y Botón (Oculto al inicio) --- */
+.product-hover-info {
+    opacity: 0;                   /* Invisible */
+    transform: translateY(10px);   /* Un poco hacia abajo */
+    transition: all 0.4s ease;
+    margin-top: 10px;
+}
+
+/* --- Hacer aparecer Info al hacer Hover --- */
+.product-link:hover .product-hover-info {
+    opacity: 1;                   /* Se vuelve visible */
+    transform: translateY(0);      /* Sube a su posición original */
+}
+
+/* --- Estilo del Precio --- */
+.price {
+    display: block;
+    font-weight: 600;
+    color: #c5a059;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* --- Estilo del Botón de Carrito --- */
+.add-to-cart {
+    background-color: #c5a059;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #000; /* Cambia a negro al tocar el botón */
+}
+
+/* Ajuste de la imagen para que no se mueva */
+.product-img-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.product-link:hover .product-img-box img {
+    transform: scale(1.05); /* Pequeño zoom a la joya */
+}
+
+
+.product-img-box {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.product-card p {
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+/* Esto asegura que el enlace no se note visualmente */
+.product-link {
+    text-decoration: none;
+    color: inherit; /* Mantiene el color negro/gris que ya definimos */
+    display: block; /* Hace que toda la tarjeta sea clickeable */
+    transition: transform 0.3s ease;
+}
+
+.product-link:hover {
+    transform: translateY(-5px); /* Pequeño efecto de elevación al pasar el mouse */
+}
+
+.product-card {
+    cursor: pointer; /* Cambia el cursor a la mano de link */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.main-wrapper {
+    display: flex;
+    gap: 40px;
+}
+
+/* --- SIDEBAR (Barra Lateral) --- */
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    border-right: 1px solid #1d1a1a28;
+}
+
+.filter-group {
+    margin-bottom: 40px;
+}
+
+.filter-group h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.filter-group ul {
+    list-style: none;
+}
+
+.filter-group ul li {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.filter-group ul li.active, 
+.filter-group ul li:hover {
+    color: #c5a059; /* Tu dorado */
+    text-decoration: underline;
+}
+
+/* --- GRILLA DE PRODUCTOS --- */
+.products-container {
+    flex-grow: 1;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas como en la imagen */
+    gap: 30px;
+}
+
+.item-card {
+    text-align: center;
+}
+
+.item-img {
+    position: relative;
+    background-color: #ffffff83;
+    padding: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* --- OVERLAY (Precio y Botón) --- */
+.item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 15, 15, 0.295); /* Sutil */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.item-card:hover .item-overlay {
+    opacity: 1;
+}
+
+.item-overlay .price {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    margin-bottom: 15px;
+}
+
+.buy-btn {
+    background-color: #c5a059;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* --- TEXTO DE PRODUCTO --- */
+.item-info {
+    margin-top: 15px;
+    padding: 0 10px;
+}
+
+.item-info p {
+    font-size: 13px;
+    color: #333;
+    line-height: 1.5;
+    text-transform: none; /* Mantiene minúsculas y mayúsculas */
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 900px) {
+    .main-wrapper { flex-direction: column; }
+    .sidebar { width: 100%; border-right: none; border-bottom: 1px solid #eee; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .catalog-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header-image {
+        justify-content: center;
+        order: -1; /* Imagen arriba en móvil */
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .filter-bar {
+        flex-direction: column;
+    }
+    
+    .filter-item {
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+}

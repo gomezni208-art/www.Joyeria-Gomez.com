@@ -1,0 +1,479 @@
+/* Reset general para evitar espacios fantasma */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* O la que prefieras */
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* --- Contenedor Principal (Header) --- */
+.main-header {
+    display: flex;
+    justify-content: space-between; /* Separa Logo - Menú - Iconos */
+    align-items: center;            /* Alineación vertical perfecta */
+    background-color: #ffffff;
+    /* Sin sombras ni bordes para que sea limpio */
+}
+
+/* CONTENEDOR GENERAL DE TODA LA PÁGINA */
+.container {
+    width: calc(100% - 120px); /* 60px margen izquierda y derecha */
+    max-width: 1400px;
+    margin: 0 auto; /* Centra todo */
+}
+
+/* --- Logo --- */
+.logo-container .logo {
+    height: 140px; /* Tamaño grande para el logo */
+    width: auto;
+    display: block;
+    margin-left: -20px; /* ajusta suave */
+}
+
+/* --- Menú de Navegación --- */
+
+.nav-menu {
+    margin-left: auto; /* lo manda hacia la derecha */
+    margin-right: 60px; /* espacio antes de los íconos */
+    margin-right: auto; 
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 40px; 
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    position: relative; /* Necesario para posicionar la línea respecto al texto */
+    padding-bottom: 8px; /* Espacio para que la línea no toque las letras */
+    transition: color 0.3s ease;
+}
+
+/* --- Creación de la línea dorada (Oculta al inicio) --- */
+.nav-menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;           /* Empezamos con ancho 0 para que no se vea */
+    height: 1.5px;      /* Grosor de la línea */
+    bottom: 0;
+    left: 50%;          /* La centramos */
+    background-color: #c5a059; /* Tu color dorado */
+    transition: all 0.3s ease; /* Animación suave */
+    transform: translateX(-50%); /* Centrado perfecto */
+}
+
+/* --- Efecto HOVER (Cuando pasas el mouse) --- */
+.nav-menu ul li a:hover {
+    color: #c5a059; /* El texto también cambia a dorado opcionalmente */
+}
+
+.nav-menu ul li a:hover::after {
+    width: 100%; /* La línea crece hasta cubrir todo el ancho del texto */
+}
+
+/* --- Aseguramos que los iconos mantengan su tamaño --- */
+.custom-icon {
+    width: 35px !important; /* Forzamos el tamaño para que no vuelvan a crecer */
+    height: auto;
+    display: block;
+}
+
+.cart-flipped {
+    transform: scaleX(-1);
+}
+
+/* --- Iconos (Usuario y Carrito) --- */
+.header-icons {
+    display: flex;          
+    flex-direction: row;    
+    align-items: center;    
+    gap: 20px;              
+    
+    /* 1. Usamos posición relativa para moverlo libremente */
+    position: relative; 
+    
+    /* Limpiamos márgenes que puedan estar estorbando */
+    margin: 0; 
+}
+
+/* Estilo para las imágenes de los iconos (se mantiene igual) */
+.custom-icon {
+    width: 35px;    
+    margin-left: 0px;        
+    height: auto;
+    display: block;
+}
+
+/* Voltear el carrito (se mantiene igual) */
+.cart-flipped {
+    transform: scaleX(-1);
+}
+/* --- Menú de Navegación --- */
+
+.nav-menu {
+    margin-left: auto; /* lo manda hacia la derecha */
+    margin-right: 60px; /* espacio antes de los íconos */
+    margin-right: auto; 
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 40px; 
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    position: relative; /* Necesario para posicionar la línea respecto al texto */
+    padding-bottom: 8px; /* Espacio para que la línea no toque las letras */
+    transition: color 0.3s ease;
+}
+
+/* --- Creación de la línea dorada (Oculta al inicio) --- */
+.nav-menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;           /* Empezamos con ancho 0 para que no se vea */
+    height: 1.5px;      /* Grosor de la línea */
+    bottom: 0;
+    left: 50%;          /* La centramos */
+    background-color: #c5a059; /* Tu color dorado */
+    transition: all 0.3s ease; /* Animación suave */
+    transform: translateX(-50%); /* Centrado perfecto */
+}
+
+
+
+/* Botones */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #c5a048; /* Tono dorado del diseño */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+     margin-top: 30px; /* baja el botón */
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    background-color: #a3843b;
+}
+
+.hero {
+    height: 70vh; /* 🔥 MÁS ALTA (antes 60vh) */
+    
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+    url('./assets/catalogo imagen 1.jpg');
+
+    background-size: cover;
+    background-position: center top; /* 🔥 SUBE LA IMAGEN */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Categorías con Flexbox */
+.categories {
+    padding: 50px 10%;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.row.reverse {
+    flex-direction: row-reverse; /* Esto hace el efecto de zig-zag */
+}
+
+.image-box {
+    flex: 1;
+}
+
+.image-box img {
+    width: 100%;
+    max-width: 450px;
+    display: block;
+    margin: 0 auto;
+}
+
+.text-box {
+    flex: 1;
+    text-align: center;
+}
+
+.text-box h2 {
+    color: #c5a048;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.product-row {
+    display: flex;
+    align-items: center; /* Centra el texto verticalmente respecto a la imagen */
+    justify-content: space-between;
+    margin-bottom: 80px; /* Espacio entre filas */
+}
+
+/* El truco del zig-zag */
+.product-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.product-image {
+    flex: 0 0 50%; /* La imagen ocupa exactamente la mitad */
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-info {
+    flex: 0 0 40%; /* El texto ocupa un poco menos del 50% para dejar aire */
+    text-align: center; /* Centra el texto y el botón internamente */
+}
+
+/* Tipografía y Botones */
+.product-info h2 {
+    color: #c5a048;
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 1.1rem;
+    margin-bottom: -50px;
+    color: #555;
+
+}
+
+.btn {
+    display: inline-block;
+    background-color: #c5a048;
+    color: white;
+    padding: 12px 35px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+.btn:hover {
+    background-color: #a3843b;
+    letter-spacing: 1px; /* Efecto sutil de elegancia */
+}
+
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+    .row, .row.reverse {
+        flex-direction: column;
+    }
+    .footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+
+.main-footer {
+    background-color: #ffffff;
+    padding: 60px 0;
+    border-top: 1px solid #e0e0e0;
+    font-family: Arial, sans-serif; /* O la fuente que estés usando */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 30px;
+    min-height: 150px;
+}
+
+/* Líneas divisorias verticales (excepto en la última columna) */
+.footer-column:not(:last-child) {
+    border-right: 1px solid #000000;
+}
+
+/* Estilos de Texto */
+.footer-column h4 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000;
+    text-transform: none;
+}
+
+.footer-column p, 
+.footer-column ul li {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #c5a059;
+}
+
+/* Configuración específica del Logo */
+.logo-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo {
+    width: 150px; /* Ajusta según el tamaño de tu imagen */
+    margin-bottom: 10px;
+}
+
+.slogan {
+    font-size: 11px !important;
+    letter-spacing: 3px;
+    color: #000 !important;
+    font-weight: 500;
+}
+
+/* Icono de Instagram */
+.insta-icon {
+    width: 30px;
+    filter: grayscale(100%); /* Para que sea negro como en la foto */
+    transition: filter 0.3s;
+}
+
+.insta-icon:hover {
+    filter: none; /* Recupera color al pasar el mouse */
+}
+
+/* --- CONFIGURACIÓN BASE (Escritorio Estándar) --- */
+.main-footer {
+    background-color: #ffffff;
+    padding: 60px 0;
+    border-top: 1px solid #e0e0e0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1400px; /* Límite para pantallas grandes */
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 25px;
+    min-height: 160px;
+    box-sizing: border-box;
+}
+
+/* Líneas divisorias solo para pantallas medianas/grandes */
+.footer-column:not(:last-child) {
+    border-right: 1px solid #000;
+}
+
+/* --- RESPONSIVO: TABLETAS (769px a 1024px) --- */
+@media (max-width: 1024px) {
+    .footer-container {
+        padding: 0 20px;
+    }
+    .footer-column {
+        padding: 0 15px;
+        font-size: 0.9rem; /* Reduce un poco el texto en tabletas */
+    }
+}
+
+/* --- RESPONSIVO: CELULARES (Hasta 768px) --- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Apila las columnas una sobre otra */
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .footer-column {
+        width: 100%;
+        padding: 30px 0;
+        min-height: auto;
+        border-right: none !important; /* Quitamos la línea vertical */
+        border-bottom: 1px solid #eee; /* Añadimos línea horizontal sutil */
+    }
+
+    .footer-column:last-child {
+        border-bottom: none; /* La última columna no lleva línea abajo */
+    }
+
+    .footer-logo {
+        margin: 0 auto 15px auto; /* Centra el logo en móvil */
+    }
+}
+
+/* --- PANTALLAS ULTRA GRANDES (Más de 1600px) --- */
+@media (min-width: 1600px) {
+    .footer-container {
+        max-width: 1600px; /* Expandimos un poco más el contenido */
+    }
+    .footer-column h4 {
+        font-size: 18px; /* Títulos más legibles en pantallas 4K */
+    }
+}
+

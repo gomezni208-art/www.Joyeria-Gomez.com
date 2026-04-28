@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso | Joyería Gómez</title>
+    <link rel="stylesheet" href="/css/iniciar secion.css">
+</head>
+<body>
+
+    <div class="auth-container">
+        <div class="auth-card" id="login-card">
+            <div class="auth-brand">
+                <img src="./assets/Logo Principal.png" alt="Logo">
+                <p class="slogan">BRILLA CON TU ESENCIA</p>
+                <button class="toggle-btn" onclick="toggleAuth()">CREAR CUENTA</button>
+            </div>
+            <div class="auth-form">
+                <h2>INICIAR SESION</h2>
+                <form>
+                    <div class="input-group">
+                        <span class="icon">👤</span>
+                        <input type="text" placeholder="Nombre">
+                    </div>
+                    <div class="input-group">
+                        <span class="icon">🔒</span>
+                        <input type="password" placeholder="Contraseña">
+                    </div>
+                    <button type="submit" class="submit-btn">INICIAR SESION</button>
+                </form>
+                <a href="politicas de privacidad.html" class="privacy-link">Políticas de Privacidad</a>
+            </div>
+        </div>
+
+        <div class="auth-card hidden" id="register-card">
+            <div class="auth-brand">
+                <img src="./assets/Logo Principal.png" alt="Logo">
+                <p class="slogan">BRILLA CON TU ESENCIA</p>
+                <button class="toggle-btn" onclick="toggleAuth()">INICIAR SESION</button>
+            </div>
+            <div class="auth-form">
+                <h2>CREAR CUENTA</h2>
+                <form>
+                    <div class="input-row">
+                        <input type="text" placeholder="Nombre">
+                        <input type="text" placeholder="Apellido">
+                    </div>
+                    <div class="input-row">
+                        <input type="text" placeholder="Celular">
+                        <input type="text" placeholder="Código Postal">
+                    </div>
+                    <div class="input-group">
+                        <span class="icon">👤</span>
+                        <input type="email" placeholder="Correo Electrónico">
+                    </div>
+                    <div class="input-group">
+                        <span class="icon">🔒</span>
+                        <input type="password" placeholder="Contraseña">
+                    </div>
+                    <button type="submit" class="submit-btn">CREAR CUENTA</button>
+                </form>
+                <a href="politicas de privacidad.html" class="privacy-link">Políticas de Privacidad</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAuth() {
+            document.getElementById('login-card').classList.toggle('hidden');
+            document.getElementById('register-card').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

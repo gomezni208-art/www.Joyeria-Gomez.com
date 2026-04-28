@@ -1,0 +1,441 @@
+/* Reset general para evitar espacios fantasma */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* O la que prefieras */
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* --- Contenedor Principal (Header) --- */
+.main-header {
+    display: flex;
+    justify-content: space-between; /* Separa Logo - Menú - Iconos */
+    align-items: center;            /* Alineación vertical perfecta */
+    background-color: #ffffff;
+    /* Sin sombras ni bordes para que sea limpio */
+}
+
+/* CONTENEDOR GENERAL DE TODA LA PÁGINA */
+.container {
+    width: calc(100% - 120px); /* 60px margen izquierda y derecha */
+    max-width: 1400px;
+    margin: 0 auto; /* Centra todo */
+}
+
+/* --- Logo --- */
+.logo-container .logo {
+    height: 140px; /* Tamaño grande para el logo */
+    width: auto;
+    display: block;
+    margin-left: -20px; /* ajusta suave */
+}
+
+/* --- Menú de Navegación --- */
+
+.nav-menu {
+    margin-left: auto; /* lo manda hacia la derecha */
+    margin-right: 60px; /* espacio antes de los íconos */
+    margin-right: auto; 
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 40px; 
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    position: relative; /* Necesario para posicionar la línea respecto al texto */
+    padding-bottom: 8px; /* Espacio para que la línea no toque las letras */
+    transition: color 0.3s ease;
+}
+
+/* --- Creación de la línea dorada (Oculta al inicio) --- */
+.nav-menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;           /* Empezamos con ancho 0 para que no se vea */
+    height: 1.5px;      /* Grosor de la línea */
+    bottom: 0;
+    left: 50%;          /* La centramos */
+    background-color: #c5a059; /* Tu color dorado */
+    transition: all 0.3s ease; /* Animación suave */
+    transform: translateX(-50%); /* Centrado perfecto */
+}
+
+/* --- Efecto HOVER (Cuando pasas el mouse) --- */
+.nav-menu ul li a:hover {
+    color: #c5a059; /* El texto también cambia a dorado opcionalmente */
+}
+
+.nav-menu ul li a:hover::after {
+    width: 100%; /* La línea crece hasta cubrir todo el ancho del texto */
+}
+
+/* --- Aseguramos que los iconos mantengan su tamaño --- */
+.custom-icon {
+    width: 35px !important; /* Forzamos el tamaño para que no vuelvan a crecer */
+    height: auto;
+    display: block;
+}
+
+.cart-flipped {
+    transform: scaleX(-1);
+}
+
+/* --- Iconos (Usuario y Carrito) --- */
+.header-icons {
+    display: flex;          
+    flex-direction: row;    
+    align-items: center;    
+    gap: 20px;              
+    
+    /* MODIFICACIÓN: Empuja los iconos hacia la izquierda */
+    margin-right: -20px; /* Ajusta este número (más alto = más a la izquierda) */
+    
+    /* Mantenemos lo demás */
+    position: relative; 
+}
+/* Estilo para las imágenes de los iconos (se mantiene igual) */
+.custom-icon {
+    width: 35px;    
+    margin-left: 0px;        
+    height: auto;
+    display: block;
+}
+
+/* Voltear el carrito (se mantiene igual) */
+.cart-flipped {
+    transform: scaleX(-1);
+}
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- SECCIÓN HERO --- */
+.about-hero {
+    height: 60vh;
+    background: url('./assets/imagenes\ de\ quienes\ somos.webp') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* Filtro oscuro suave para que el texto se lea bien */
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-overlay h1 {
+    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+}
+
+.hero-overlay h1 span {
+    color: #c5a059; /* Dorado */
+    font-style: italic;
+}
+
+.hero-overlay p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+/* --- SECCIONES DE INFORMACIÓN (Misión/Visión) --- */
+.info-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.info-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+/* Efecto Espejo: Voltea el orden en la Visión */
+.info-section.reverse .info-content {
+    flex-direction: row;
+}
+
+.info-text {
+    flex: 1;
+}
+
+.info-text h2 {
+    font-family: 'Playfair Display', serif;
+    color: #c5a059;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.info-text p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.info-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Forma Ovalada de la Imagen */
+.oval-img {
+    width: 100%;
+    max-width: 450px;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 250px; /* Crea el efecto ovalado perfecto */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+
+/* ==========================================================================
+   AJUSTE DE LÍNEAS DIVISORIAS (QUIÉNES SOMOS)
+   ========================================================================== */
+
+/* 2. Línea entre "Quiénes Somos" (Hero) y "Misión" */
+.about-hero {
+    border-bottom: 1.5px solid #c5a059; /* Raya divisoria elegante al final del banner */
+    margin-bottom: 20px;
+}
+
+/* 3. Ajuste de las líneas de Misión y Visión (Alargadas) */
+.info-section {
+    padding: 100px 0;
+    background-color: #fff;
+    position: relative;
+}
+
+/* Esta es la raya que va ANTES de Misión y ANTES de Visión */
+.info-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Alargamos la línea al 90% del contenedor para que sea casi total */
+    width: 90%; 
+    height: 1px;
+    background-color: rgba(197, 160, 89, 0.4); /* Dorado sutil */
+}
+
+/* Quitamos la raya de la primera sección si no quieres que se duplique con la del Hero */
+.info-section:first-of-type::before {
+    display: none; 
+}
+
+/* 4. Estilo del título Misión/Visión (Sin rayas individuales si ya tenemos la larga) */
+.info-text h2 {
+    font-family: 'PlayfairLocal', serif;
+    color: #c5a059;
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    border: none; /* Aseguramos que el título no tenga rayas propias */
+}
+
+/* --- RESPONSIVO PARA MÓVIL --- */
+@media (max-width: 768px) {
+    .info-content, .info-section.reverse .info-content {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    
+    .hero-overlay h1 {
+        font-size: 2.5rem;
+    }
+
+    .oval-img {
+        height: 400px;
+    }
+}
+
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 30px;
+    min-height: 150px;
+}
+
+/* Líneas divisorias verticales (excepto en la última columna) */
+.footer-column:not(:last-child) {
+    border-right: 1px solid #000000;
+}
+
+/* Estilos de Texto */
+.footer-column h4 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000;
+    text-transform: none;
+}
+
+.footer-column p, 
+.footer-column ul li {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #c5a059;
+}
+
+/* Configuración específica del Logo */
+.logo-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo {
+    width: 150px; /* Ajusta según el tamaño de tu imagen */
+    margin-bottom: 10px;
+}
+
+.slogan {
+    font-size: 11px !important;
+    letter-spacing: 3px;
+    color: #000 !important;
+    font-weight: 500;
+}
+
+/* Icono de Instagram */
+.insta-icon {
+    width: 30px;
+    filter: grayscale(100%); /* Para que sea negro como en la foto */
+    transition: filter 0.3s;
+}
+
+.insta-icon:hover {
+    filter: none; /* Recupera color al pasar el mouse */
+}
+
+/* --- CONFIGURACIÓN BASE (Escritorio Estándar) --- */
+.main-footer {
+    background-color: #ffffff;
+    padding: 60px 0;
+    border-top: 1px solid #e0e0e0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1400px; /* Límite para pantallas grandes */
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 25px;
+    min-height: 160px;
+    box-sizing: border-box;
+}
+
+/* Líneas divisorias solo para pantallas medianas/grandes */
+.footer-column:not(:last-child) {
+    border-right: 1px solid #000;
+}
+
+/* --- RESPONSIVO: TABLETAS (769px a 1024px) --- */
+@media (max-width: 1024px) {
+    .footer-container {
+        padding: 0 20px;
+    }
+    .footer-column {
+        padding: 0 15px;
+        font-size: 0.9rem; /* Reduce un poco el texto en tabletas */
+    }
+}
+
+/* --- RESPONSIVO: CELULARES (Hasta 768px) --- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Apila las columnas una sobre otra */
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .footer-column {
+        width: 100%;
+        padding: 30px 0;
+        min-height: auto;
+        border-right: none !important; /* Quitamos la línea vertical */
+        border-bottom: 1px solid #eee; /* Añadimos línea horizontal sutil */
+    }
+
+    .footer-column:last-child {
+        border-bottom: none; /* La última columna no lleva línea abajo */
+    }
+
+    .footer-logo {
+        margin: 0 auto 15px auto; /* Centra el logo en móvil */
+    }
+}
+
+/* --- PANTALLAS ULTRA GRANDES (Más de 1600px) --- */
+@media (min-width: 1600px) {
+    .footer-container {
+        max-width: 1600px; /* Expandimos un poco más el contenido */
+    }
+    .footer-column h4 {
+        font-size: 18px; /* Títulos más legibles en pantallas 4K */
+    }
+}
+

@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MontserratLocal', sans-serif;
+}
+
+body {
+    background-color: #fdfdfd; /* Fondo rosa suave de la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.auth-card {
+    background: white;
+    display: flex;
+    border: 1px solid #ccc;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    min-height: 500px;
+}
+
+.hidden { display: none; }
+
+/* PANEL IZQUIERDO (Contenedor de Logo, Eslogan y Botón) */
+.auth-brand {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Esto lo centra inicialmente */
+    align-items: center;
+    padding: 40px;
+    border-right: 1px solid #eee;
+    text-align: center;
+
+    /* --- AJUSTE PARA SUBIR TODO EL BLOQUE --- */
+    margin-top: -60px; /* Sube todo el contenido hacia arriba */
+}
+
+/* Asegúrate de que el contenedor padre no corte el contenido */
+.auth-card {
+    overflow: visible; /* Permite que el margen negativo se vea bien */
+    align-items: center; /* Ayuda a que los paneles se alineen bien */
+}
+
+/* 1. Logo más grande */
+.auth-brand img {
+    width: 300px; /* Aumentado de 120px a 200px */
+    height: auto;
+    margin-bottom: 5px; /* Menos espacio con el eslogan para que se vean como una unidad */
+}
+
+/* --- 1. Ajuste del Eslogan --- */
+.auth-brand .slogan {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 500;
+    
+    /* EL CAMBIO CLAVE: */
+    margin-top: -30px;    /* Sube el eslogan hacia el logo sin mover el logo */
+    margin-bottom: 25px;  /* Controla la distancia con el botón de abajo */
+    
+    display: block;
+    line-height: 1;
+}
+
+/* --- 2. Ajuste del Botón (Opcional) --- */
+.toggle-btn {
+    /* Si quieres que el botón suba aún más independiente del eslogan */
+    margin-top: -10px; 
+    
+    background-color: #c5a059;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* --- 3. El Logo se queda quieto --- */
+.auth-brand img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 0; /* Asegura que no empuje lo de abajo */
+    display: block;
+}
+
+/* Opcional: Asegúrate de que el logo no tenga un margen inferior grande */
+.auth-brand img {
+    width: 300px;
+    height: auto;
+    margin-bottom: 0px; /* Eliminamos espacio sobrante del logo */
+}
+/* Ajuste del botón para que no se pegue al eslogan */
+.toggle-btn {
+    background-color: #c5a059;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #b38f4d; /* Un tono más oscuro al pasar el mouse */
+}
+
+/* PANEL DERECHO (Formulario) */
+.auth-form {
+    flex: 1.2;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.auth-form h2 {
+    font-family: 'PlayfairLocal', serif;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-row input {
+    width: 50%;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.input-group input {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #c5a059;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.privacy-link {
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+    color: #c5a059;
+    text-decoration: underline;
+    font-size: 12px;
+}

@@ -1,0 +1,121 @@
+/* Registro de tus fuentes locales */
+@font-face {
+    font-family: 'MontserratLocal';
+    src: url('../Fuentes/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PlayfairLocal';
+    src: url('../Fuentes/PlayfairDisplay-Italic.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'MontserratLocal', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.privacy-container {
+    max-width: 800px; /* Contenedor más estrecho para facilitar la lectura */
+    margin: 60px auto;
+    padding: 20px;
+}
+
+/* Encabezado */
+.privacy-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.logo-small {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.privacy-header h1 {
+    font-family: 'PlayfairLocal', serif;
+    font-size: 32px;
+    color: #000;
+}
+
+.privacy-header h1 span {
+    color: #c5a059;
+    font-style: italic;
+}
+
+.gold-divider {
+    width: 60px;
+    height: 2px;
+    background-color: #c5a059;
+    margin: 15px auto;
+}
+
+/* Bloques de Texto */
+.content-block {
+    margin-bottom: 35px;
+}
+
+.content-block h2 {
+    font-family: 'PlayfairLocal', serif;
+    color: #c5a059;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.content-block p, .content-block li {
+    font-size: 15px;
+    color: #555;
+    text-align: justify;
+}
+
+.content-block ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+/* Nota final y botón */
+.footer-note {
+    text-align: center;
+    margin-top: 60px;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+.footer-note p {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    display: inline-block;
+    background-color: #c5a059;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: background 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #000;
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+    .privacy-container {
+        margin: 30px auto;
+    }
+    .privacy-header h1 {
+        font-size: 26px;
+    }
+}
