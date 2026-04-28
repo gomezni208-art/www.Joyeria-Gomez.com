@@ -128,7 +128,7 @@ body {
 /* --- SECCIÓN HERO --- */
 .about-hero {
     height: 60vh;
-    background: url('./Joyeria-Gomez/assets/imagenes\ de\ quienes\ somos.webp') center/cover no-repeat;
+    background: url('/Joyeria-Gomez/assets/imagenes\ de\ quienes\ somos.webp') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
